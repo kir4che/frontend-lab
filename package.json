@@ -1,5 +1,6 @@
 {
-  "name": "my-react-test",
+  "name": "frontend-lab",
+  "homepage": "https://frontend-lab.kir4che.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,30 +8,42 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@tailwindcss/vite": "^4.1.17",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.9.5",
+    "react-syntax-highlighter": "^16.1.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
-    "@stagewise-plugins/react": "^0.6.2",
-    "@stagewise/toolbar-react": "^0.6.2",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react": "^4.6.0",
     "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
-    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "tailwindcss": "^4.1.17",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
-    "vitest": "^3.2.4"
+    "vite-plugin-svgr": "^4.5.0",
+    "vitest": "^4.0.9"
   }
 }

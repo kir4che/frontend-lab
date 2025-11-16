@@ -1,13 +1,23 @@
 /// <reference types="vitest" />
 
+import { fileURLToPath, URL } from 'node:url';
+
+import { defineConfig } from 'vitest/config';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [react()],
+  base: '/',
+  plugins: [react(), tailwindcss(), svgr()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   test: {
     environment: 'jsdom',
-    globals: true, // 讓 describe/it/expect 可以不 import 直接用
-    setupFiles: './src/setupTests.ts', // 讓 jest-dom 自動載入
+    globals: true,
+    setupFiles: './src/setupTests.ts',
   },
 });
